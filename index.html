@@ -4,7 +4,8 @@
 <script>
 function requestConnectToDevice() {
     navigator.usb.requestDevice({ filters: [{ vendorId: 43981 }] })
-.then(device => {
+.then(selectedDevice => {
+        device = selectedDevice;
   console.log(device.productName);      
   console.log(device.manufacturerName); 
   document.getElementById("productName").innerHTML = "Product Name: " + device.productName;
